@@ -15,5 +15,9 @@ mainClass = 'hexlet.code.App'
 }
 
 compileJava {
-  options.release = 11
+options.release = 11
+}
+
+run {
+standardInput = System.in
 }
