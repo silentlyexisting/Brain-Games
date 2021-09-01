@@ -7,7 +7,8 @@ public class App {
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
-    System.out.print("Please enter the game number and press Enter.\n" + "1 - Greet\n2 - Even\n3 - Calc\n0 - Exit\n"
+    System.out.print("Please enter the game number and press Enter.\n" + "1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n" +
+            "0 - Exit\n"
             + "Your choise: ");
     numOfGame = sc.nextInt();
     if (numOfGame == 1) {
@@ -18,6 +19,9 @@ public class App {
     } else if (numOfGame == 3) {
       System.out.println(Cli.greeting());
       System.out.println(Calc.getRandom());
+    } else if (numOfGame == 4) {
+      System.out.println(Cli.greeting());
+      System.out.println(GCD.getGcd());
     }
   }
 }

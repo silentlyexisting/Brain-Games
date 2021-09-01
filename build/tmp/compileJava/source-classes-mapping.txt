@@ -1,7 +1,13 @@
+hexlet/code/Engine.java
+ hexlet.code.Engine
+hexlet/code/GCD.java
+ hexlet.code.GCD
 hexlet/code/App.java
  hexlet.code.App
 hexlet/code/Calc.java
  hexlet.code.Calc
+hexlet/code/Util.java
+ hexlet.code.Util
 hexlet/code/Even.java
  hexlet.code.Even
 hexlet/code/Cli.java
