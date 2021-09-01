@@ -1,4 +1,8 @@
 hexlet/code/App.java
  hexlet.code.App
+hexlet/code/Calc.java
+ hexlet.code.Calc
+hexlet/code/Even.java
+ hexlet.code.Even
 hexlet/code/Cli.java
  hexlet.code.Cli
