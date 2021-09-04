@@ -1,30 +1,39 @@
 package hexlet.code;
 
-import java.util.Scanner;
 
 public class Even {
+    public static String getRules() {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    }
 
-    public static String evenGame() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        final int minRandomRange = 1;
-        final int maxRandomRange = 100;
-    //    final int amountOfRounds = 3;
-        for (int i = 0; i < Engine.ammountOfRounds; i++) {
-            int randomNum = (int) Math.floor(Math.random() * (maxRandomRange - minRandomRange + 1)
-                    + minRandomRange);
-            System.out.println("Question: " + randomNum + "\nYour answer: ");
-            String answer = scanner.nextLine();
-            if (randomNum % 2 == 0 && answer.equals("yes")) {
-                System.out.println("Correct!");
-            } else if (randomNum % 2 != 0 && answer.equals("no")) {
-                System.out.println("Correct!");
-            } else {
-                return "'yes' is wrong answer ;(. Correct answer was 'no'.\n" + "Let's try again, " + Cli.userName;
+    public static void launchEvenGame() {
+        String[][] result = new String[3][2];
 
-            }
+        for (int i = 0; i != 3; i++) {
+            String[] temp = evenGame();
+            result[i][0] = temp[0];
+            result[i][1] = temp[1];
         }
-        return "Congratulations, " + Cli.userName;
+
+        Engine.gameEngine(result, getRules());
+
+    }
+
+
+    public static String[] evenGame() {
+        String[] resultEven = new String[2];
+
+        int[] randomNumForEven = Util.getRandomNum(1, 100, 1);
+
+
+        if (randomNumForEven[0] % 2 == 0) {
+            resultEven[1] = "yes";
+        } else if (randomNumForEven[0] % 2 != 0) {
+            resultEven[1] = "no";
+        }
+
+        resultEven[0] = String.valueOf(randomNumForEven[0]);
+        return resultEven;
     }
 }
 

@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
@@ -8,20 +9,23 @@ public class App {
 
     Scanner sc = new Scanner(System.in);
     System.out.print("Please enter the game number and press Enter.\n" + "1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n" +
-            "0 - Exit\n"
+            "5 - Progression\n0 - Exit\n"
             + "Your choise: ");
     numOfGame = sc.nextInt();
     if (numOfGame == 1) {
       System.out.println(Cli.greeting());
     } else if (numOfGame == 2) {
-      System.out.println(Cli.greeting());
-      System.out.println(Even.evenGame());
+      Even.launchEvenGame();
     } else if (numOfGame == 3) {
       System.out.println(Cli.greeting());
-      System.out.println(Calc.getRandom());
+   //   System.out.println(Calc.getRandom());
     } else if (numOfGame == 4) {
       System.out.println(Cli.greeting());
-      System.out.println(GCD.getGcd());
+   //   System.out.println(GCD.getGcd());
+    } else if (numOfGame == 5) {
+     Progression.launchProgressionGame();
+  } else if (numOfGame == 6) {
+      Prime.launchPrimeGame();
     }
-  }
+}
 }
