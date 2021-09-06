@@ -1,31 +1,41 @@
 package hexlet.code;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
-  public static int numOfGame = -1;
+  private static int numOfGame = -1;
   public static void main(String[] args) {
-
     Scanner sc = new Scanner(System.in);
-    System.out.print("Please enter the game number and press Enter.\n" + "1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n" +
-            "5 - Progression\n0 - Exit\n"
+    System.out.print("Please enter the game number and press Enter.\n"
+            + "1 - Greet\n"
+            + "2 - Even\n"
+            + "3 - Calc\n"
+            + "4 - GCD\n"
+            + "5 - Progression\n"
+            + "6 - Prime\n"
+            + "0 - Exit\n"
             + "Your choise: ");
     numOfGame = sc.nextInt();
-    if (numOfGame == 1) {
-      System.out.println(Cli.greeting());
-    } else if (numOfGame == 2) {
-      Even.launchEvenGame();
-    } else if (numOfGame == 3) {
-      System.out.println(Cli.greeting());
-   //   System.out.println(Calc.getRandom());
-    } else if (numOfGame == 4) {
-      System.out.println(Cli.greeting());
-   //   System.out.println(GCD.getGcd());
-    } else if (numOfGame == 5) {
-     Progression.launchProgressionGame();
-  } else if (numOfGame == 6) {
-      Prime.launchPrimeGame();
+
+    switch (numOfGame) {
+      case 1:
+        Cli.greeting();
+        break;
+      case 2:
+        Even.launchEvenGame();
+        break;
+      case 3:
+        Calc.launchCalcGame();
+        break;
+      case 4:
+        GCD.launchGcdGame();
+        break;
+      case 5:
+        Progression.launchProgressionGame();
+        break;
+      case 6:
+        Prime.launchPrimeGame();
+      default:
     }
-}
+  }
 }

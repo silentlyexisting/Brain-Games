@@ -1,10 +1,9 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import java.util.Random;
 
 public class Engine {
-    public static int winsCounter = 0;
+    private static int winsCounter = 0;
 
     public static void gameEngine(String[][] arrayResult, String rules) {
         Cli.greeting();
@@ -15,7 +14,7 @@ public class Engine {
 
 
         for (int i = 0; i != 3; i++) {
-            System.out.println("Question: " + arrayResult[i][0]);
+            System.out.print("Question: " + arrayResult[i][0] + "\nYour answer: ");
             String answer = scanner.nextLine();
             if (answer.equals(arrayResult[i][1])) {
                 System.out.println("Correct!");

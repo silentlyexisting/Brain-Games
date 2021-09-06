@@ -1,12 +1,7 @@
 package hexlet.code;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
-
-
     public class Progression {
-        private final static int progressionLength = 10;
+        private final static int lengthOfProgression = 10;
 
         public static String getRules() {
             return  "What number is missing in the progression?";
@@ -23,20 +18,17 @@ import java.util.Scanner;
         }
 
         public static String[] progression() {
-            Scanner scanner = new Scanner(System.in);
-            String[] progressionArray = new String[progressionLength];
+            String[] progressionArray = new String[lengthOfProgression];
             StringBuilder sb = new StringBuilder();
             String[] resultProgression = new String[2];
-
-            int counter = 0;
 
             int[] firstNumOfProgression = Util.getRandomNum(1, 10, 1);
 
             int[] intervalProgression = Util.getRandomNum(1, 9, 1);
 
-            for (int i = 0; i <= progressionLength - 1; i++) {
+            for (int i = 0; i <= lengthOfProgression - 1; i++) {
                 firstNumOfProgression[0] += intervalProgression[0];
-                progressionArray[i] = String.valueOf(firstNumOfProgression);
+                progressionArray[i] = String.valueOf(firstNumOfProgression[0]);
 
             }
 
@@ -47,7 +39,6 @@ import java.util.Scanner;
             for (String s : progressionArray) {
                 sb.append(s + " ");
             }
-            System.out.println(Arrays.toString(progressionArray));
             resultProgression[0] = String.valueOf(sb);
             resultProgression[1] = result;
             return resultProgression;

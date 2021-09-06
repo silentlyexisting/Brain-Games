@@ -1,5 +1,7 @@
 hexlet/code/Engine.java
  hexlet.code.Engine
+hexlet/code/GCD.java
+ hexlet.code.GCD
 hexlet/code/Prime.java
  hexlet.code.Prime
 hexlet/code/App.java
