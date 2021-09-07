@@ -3,6 +3,13 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
+  private static final int CLI_GREET = 1;
+  private static final int EVEN_GAME = 2;
+  private static final int CALC_GAME = 3;
+  private static final int GCD_GAME = 4;
+  private static final int PROGRESSION_GAME = 5;
+  private static final int PRIME_GAME = 6;
+
   private static int numOfGame = -1;
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
@@ -18,22 +25,22 @@ public class App {
     numOfGame = sc.nextInt();
 
     switch (numOfGame) {
-      case 1:
+      case CLI_GREET:
         Cli.greeting();
         break;
-      case 2:
+      case EVEN_GAME:
         Even.launchEvenGame();
         break;
-      case 3:
+      case CALC_GAME:
         Calc.launchCalcGame();
         break;
-      case 4:
+      case GCD_GAME:
         GCD.launchGcdGame();
         break;
-      case 5:
+      case PROGRESSION_GAME:
         Progression.launchProgressionGame();
         break;
-      case 6:
+      case PRIME_GAME:
         Prime.launchPrimeGame();
       default:
     }
