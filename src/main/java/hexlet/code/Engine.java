@@ -31,7 +31,7 @@ public class Engine {
 
     public static void checkWinsCounter() {
         if (winsCounter == COUNTER) {
-            System.out.println("Congratulations, " + Cli.getName());
+            System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }
 }
