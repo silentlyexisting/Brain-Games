@@ -1,5 +1,7 @@
-package hexlet.code;
+package hexlet.code.games;
 
+import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Even {
     private static final int MIN_RANGE_RANDOM = 1;

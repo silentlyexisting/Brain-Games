@@ -1,6 +1,7 @@
-package hexlet.code;
+package hexlet.code.games;
 
-import java.util.Scanner;
+import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Prime {
     private static final int MIN_RANGE_RANDOM = 1;
@@ -25,7 +26,6 @@ public class Prime {
     }
 
     public static String[] prime() {
-        Scanner scanner = new Scanner(System.in);
         String[] resultPrime = new String[2];
 
         int[] randomNumForPrime = Util.getRandomNum(MIN_RANGE_RANDOM, MAX_RANGE_RANDOM, AMMOUNT_OF_RANDOM_NUMS);

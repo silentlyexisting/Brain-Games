@@ -1,18 +1,18 @@
 hexlet/code/Engine.java
  hexlet.code.Engine
-hexlet/code/GCD.java
- hexlet.code.GCD
-hexlet/code/Prime.java
- hexlet.code.Prime
+hexlet/code/games/Even.java
+ hexlet.code.games.Even
 hexlet/code/App.java
  hexlet.code.App
-hexlet/code/Calc.java
- hexlet.code.Calc
+hexlet/code/games/Progression.java
+ hexlet.code.games.Progression
 hexlet/code/Util.java
  hexlet.code.Util
-hexlet/code/Progression.java
- hexlet.code.Progression
-hexlet/code/Even.java
- hexlet.code.Even
+hexlet/code/games/GCD.java
+ hexlet.code.games.GCD
+hexlet/code/games/Prime.java
+ hexlet.code.games.Prime
 hexlet/code/Cli.java
  hexlet.code.Cli
+hexlet/code/games/Calc.java
+ hexlet.code.games.Calc

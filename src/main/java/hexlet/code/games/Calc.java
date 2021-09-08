@@ -1,4 +1,7 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
+import hexlet.code.Util;
 
 import java.util.Random;
 
@@ -35,7 +38,7 @@ public class Calc {
 
         int[] randomNum = Util.getRandomNum(MIN_RANGE_RANDOM, MAX_RANGE_RANDOM, AMMOUNT_OF_RANDOM_NUMS);
 
-        String stringFormOperation = randomNum[0] + operator[getRandomOperator] + randomNum[1];
+        String stringFormOperation = randomNum[0] + " " + operator[getRandomOperator] + " " + randomNum[1];
 
         calcResult[0] = stringFormOperation;
 

@@ -1,4 +1,7 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
+import hexlet.code.Util;
 
     public class Progression {
         private static final int LENGTH_OF_PROGRESSION = 10;
