@@ -14,7 +14,6 @@ public class App {
   private static final int GCD_GAME = 4;
   private static final int PROGRESSION_GAME = 5;
   private static final int PRIME_GAME = 6;
-  private static int numOfGame = -1;
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.print("Please enter the game number and press Enter.\n"
@@ -26,9 +25,9 @@ public class App {
             + "6 - Prime\n"
             + "0 - Exit\n"
             + "Your choise: ");
-    numOfGame = sc.nextInt();
-    switch (numOfGame) {
-      case CLI_GREET: Cli.greeting();
+
+    switch (sc.nextInt()) {
+      case CLI_GREET: Engine.greeting();
         break;
       case EVEN_GAME: Even.launchEvenGame();
         break;

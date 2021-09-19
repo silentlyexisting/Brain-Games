@@ -8,14 +8,14 @@
 <a href="https://codeclimate.com/github/silentlyexisting/java-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/d76f389377fdf56263af/maintainability" /></a>
 
 
-https://asciinema.org/a/rtNnvFXjJT5y5ZXOybc0IYYZ7
+<a href="https://asciinema.org/a/0cweG52sEzBfYSm777mKv5joN" target="_blank"><img src="https://asciinema.org/a/0cweG52sEzBfYSm777mKv5joN.svg" /></a>
 
-https://asciinema.org/a/6iV959AbsBzqIoXJjEadyqaOS
+<a href="https://asciinema.org/a/MMOSPzAuq9Jg3eQ9Pkopmv2nV" target="_blank"><img src="https://asciinema.org/a/MMOSPzAuq9Jg3eQ9Pkopmv2nV.svg" /></a>
 
-https://asciinema.org/a/yK06yydfjR4dECBANNYOvA2yv
+<a href="https://asciinema.org/a/lBhlKLq46RJiXwkjHEdQMfq9X" target="_blank"><img src="https://asciinema.org/a/lBhlKLq46RJiXwkjHEdQMfq9X.svg" /></a>
 
-https://asciinema.org/a/jV0eQ2LborOHFn4m8Bun8NQjR
+<a href="https://asciinema.org/a/NM5N6XeoZOclZeLunhy759OJ3" target="_blank"><img src="https://asciinema.org/a/NM5N6XeoZOclZeLunhy759OJ3.svg" /></a>
 
-https://asciinema.org/a/zQR0q0R1u0PaTNAlss0u8G5Ju
+<a href="https://asciinema.org/a/RIJr4kNu4FF2sqlI6ZGLsZFlX" target="_blank"><img src="https://asciinema.org/a/RIJr4kNu4FF2sqlI6ZGLsZFlX.svg" /></a>
 
-https://asciinema.org/a/A6GT2oUJIvTMQgaTcMyMRtanP
+<a href="https://asciinema.org/a/5hgtTgpiD9PzDGkvE9KAxUGoh" target="_blank"><img src="https://asciinema.org/a/5hgtTgpiD9PzDGkvE9KAxUGoh.svg" /></a>
