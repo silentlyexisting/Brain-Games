@@ -4,9 +4,6 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
-    private static final int MIN_RANGE_RANDOM = 1;
-    private static final int MAX_RANGE_RANDOM = 100;
-    private static final int AMMOUNT_OF_RANDOM_NUMS = 1;
     private static final int COUNTER = 3;
     private static final int ANSWERS = 3;
 
@@ -31,7 +28,7 @@ public class Even {
     public static String[] evenGame() {
         String[] resultEven = new String[2];
 
-        int[] randomNumForEven = Util.getRandomNum(MIN_RANGE_RANDOM, MAX_RANGE_RANDOM, AMMOUNT_OF_RANDOM_NUMS);
+        int[] randomNumForEven = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM, Util.AMMOUNT_OF_RANDOM_NUMS);
 
 
         if (randomNumForEven[0] % 2 == 0) {
