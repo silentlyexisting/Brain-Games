@@ -27,7 +27,7 @@ public class App {
             + "Your choise: ");
 
     switch (sc.nextInt()) {
-      case CLI_GREET: Engine.greeting();
+      case CLI_GREET: Cli.greeting();
         break;
       case EVEN_GAME: Even.launchEvenGame();
         break;

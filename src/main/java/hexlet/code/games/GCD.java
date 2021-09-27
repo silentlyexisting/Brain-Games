@@ -4,36 +4,35 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class GCD {
-    public static String getRules() {
-        return "Find the greatest common divisor of given numbers.";
-    }
-
+    private static final String RULES = "Find the greatest common divisor of given numbers.";
     public static void launchGcdGame() {
         String[][] result = new String[Util.ANSWERS][2];
         for (int i = 0; i < Util.COUNTER; i++) {
-            String[] temp = getGcd();
-            result[i][0] = temp[0];
-            result[i][1] = temp[1];
+            int firstNumForGcd = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
+            int secondNumForGcd = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
+            result[i][0] = gcdQuestionToString(firstNumForGcd, secondNumForGcd);
+            result[i][1] = correctAnswerToString(correctAnswerGcd(firstNumForGcd, secondNumForGcd));
         }
-        Engine.gameEngine(result, getRules());
+        Engine.gameEngine(result, RULES);
+    }
+    public static String gcdQuestionToString(int firstNumForGcd, int secondNumForGcd) {
+        return firstNumForGcd + " " + secondNumForGcd;
     }
 
-    public static String[] getGcd() {
-        String[] gcdResult = new String[2];
-
-        int[] randomNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM, Util.AMMOUNT_OF_RANDOM_NUMS2);
-
-        gcdResult[0] = randomNum[0] + " " + randomNum[1];
-
-        while (randomNum[0] != randomNum[1]) {
-            if (randomNum[0] > randomNum[1]) {
-                randomNum[0] = randomNum[0] - randomNum[1];
-                gcdResult[1] = String.valueOf(randomNum[0]);
+    public static int correctAnswerGcd(int firstNumForGcd, int secondNumForGcd) {
+        int tempResultNum = 0;
+        while (firstNumForGcd != secondNumForGcd) {
+            if (firstNumForGcd > secondNumForGcd) {
+                firstNumForGcd = firstNumForGcd - secondNumForGcd;
+                tempResultNum = firstNumForGcd;
             } else {
-                randomNum[1] = randomNum[1] - randomNum[0];
-                gcdResult[1] = String.valueOf(randomNum[1]);
+                secondNumForGcd = secondNumForGcd - firstNumForGcd;
+                tempResultNum = secondNumForGcd;
             }
         }
-        return gcdResult;
+        return tempResultNum;
+    }
+    public static String correctAnswerToString(int answerNumForGcd) {
+        return String.valueOf(answerNumForGcd);
     }
 }

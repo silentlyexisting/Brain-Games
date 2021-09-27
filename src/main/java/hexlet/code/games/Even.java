@@ -4,33 +4,23 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
-
-    public static String getRules() {
-        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    }
-
+    private static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static void launchEvenGame() {
         String[][] result = new String[Util.ANSWERS][2];
-
         for (int i = 0; i != Util.COUNTER; i++) {
-            String[] temp = evenGame();
-            result[i][0] = temp[0];
-            result[i][1] = temp[1];
+            int randomNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
+            String answer = getCorrectAnswerForEvenGame(randomNum);
+            result[i][0] = Util.questionNumToString(randomNum);
+            result[i][1] = answer;
         }
-        Engine.gameEngine(result, getRules());
+        Engine.gameEngine(result, RULES);
     }
 
-    public static String[] evenGame() {
-        String[] resultEven = new String[2];
-        int[] randomNumForEven = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM,
-                Util.AMMOUNT_OF_RANDOM_NUMS);
-        if (randomNumForEven[0] % 2 == 0) {
-            resultEven[1] = "yes";
-        } else if (randomNumForEven[0] % 2 != 0) {
-            resultEven[1] = "no";
+    public static String getCorrectAnswerForEvenGame(int randomNumForEven) {
+        if (randomNumForEven % 2 == 0) {
+            return  "yes";
         }
-        resultEven[0] = String.valueOf(randomNumForEven[0]);
-        return resultEven;
+        return  "no";
     }
 }
 
