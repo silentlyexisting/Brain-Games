@@ -1,3 +1,6 @@
+setup:
+	gradle wrapper --gradle-version 7.2
+
 install:
 	./gradlew clean install
 	
