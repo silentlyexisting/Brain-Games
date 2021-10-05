@@ -10,14 +10,14 @@ public class Prime {
         String[][] result = new String[Util.ANSWERS][2];
         for (int i = 0; i != Util.COUNTER; i++) {
             int randomNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
-            String answer = correctAnswer(randomNum) ? "yes" : "no";
+            String answer = findCorrectAnswer(randomNum) ? "yes" : "no";
             result[i][0] = String.valueOf(randomNum);
             result[i][1] = answer;
         }
         Engine.runEngine(result, RULES);
     }
 
-    public static boolean correctAnswer(int randomNum) {
+    public static boolean findCorrectAnswer(int randomNum) {
         int i = 2;
         boolean checkPrime = false;
         while (i <= randomNum / 2) {

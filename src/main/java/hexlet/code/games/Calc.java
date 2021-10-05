@@ -14,7 +14,7 @@ public class Calc {
             int firstNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
             int secondNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
             result[i][0] = buildQuestion(firstNum, secondNum, OPERATOR[randomOperator]);
-            result[i][1] = correctAnswer(firstNum, secondNum, randomOperator);
+            result[i][1] = findCorrectAnswer(firstNum, secondNum, randomOperator);
         }
         Engine.runEngine(result, RULES);
     }
@@ -23,7 +23,7 @@ public class Calc {
         return firstNum + " " + operator + " " + secondNum;
     }
 
-    public static String correctAnswer(int firstNum, int secondNum, int randomOperator) {
+    public static String findCorrectAnswer(int firstNum, int secondNum, int randomOperator) {
         int resultOfExpression = 0;
         if (randomOperator == 0) {
             resultOfExpression = firstNum + secondNum;

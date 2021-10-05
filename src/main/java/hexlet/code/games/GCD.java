@@ -12,7 +12,7 @@ public class GCD {
             int firstNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
             int secondNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
             result[i][0] = buildQuestion(firstNum, secondNum);
-            result[i][1] = String.valueOf(correctAnswer(firstNum, secondNum));
+            result[i][1] = String.valueOf(findCorrectAnswer(firstNum, secondNum));
         }
         Engine.runEngine(result, RULES);
     }
@@ -21,7 +21,7 @@ public class GCD {
         return firstNum + " " + secondNum;
     }
 
-    public static int correctAnswer(int firstNum, int secondNum) {
+    public static int findCorrectAnswer(int firstNum, int secondNum) {
         int tempResultNum = 0;
         while (firstNum != secondNum) {
             if (firstNum > secondNum) {
