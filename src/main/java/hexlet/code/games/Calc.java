@@ -5,40 +5,35 @@ import hexlet.code.Util;
 
 public class Calc {
     private static final String RULES = "What is the result of the expression?";
+    private static final String[] OPERATOR = {"+", "-", "*"};
+
     public static void launchCalcGame() {
         String[][] result = new String[Util.ANSWERS][2];
         for (int i = 0; i != Util.COUNTER; i++) {
-            String[] temp = getRandom();
-            result[i][0] = temp[0];
-            result[i][1] = temp[1];
+            int randomOperator = Util.getRandomNum(0, 2);
+            int firstNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
+            int secondNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
+            result[i][0] = buildQuestion(firstNum, secondNum, OPERATOR[randomOperator]);
+            result[i][1] = correctAnswer(firstNum, secondNum, randomOperator);
         }
-        Engine.gameEngine(result, RULES);
+        Engine.runEngine(result, RULES);
     }
 
-    public static String calcQuestionToString(int firstNumForCalc, int secondNumForCalc, String operator) {
-        return firstNumForCalc + " " + operator + " " + secondNumForCalc;
+    public static String buildQuestion(int firstNum, int secondNum, String operator) {
+        return firstNum + " " + operator + " " + secondNum;
     }
 
-    public static String[] getRandom() {
+    public static String correctAnswer(int firstNum, int secondNum, int randomOperator) {
         int resultOfExpression = 0;
-        String[] calcResult = new String[2];
-        String[] operator = {"+", "-", "*"};
-        int getRandomOperator = Util.getRandomNum(0, 2);
-        int firstNumForCalc = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
-        int secondNumForCalc = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
-        String stringFormOperation = calcQuestionToString(firstNumForCalc, secondNumForCalc,
-                operator[getRandomOperator]);
-        calcResult[0] = stringFormOperation;
-        if (getRandomOperator == 0) {
-            resultOfExpression = firstNumForCalc + secondNumForCalc;
+        if (randomOperator == 0) {
+            resultOfExpression = firstNum + secondNum;
         }
-        if (getRandomOperator == 1) {
-            resultOfExpression = firstNumForCalc - secondNumForCalc;
+        if (randomOperator == 1) {
+            resultOfExpression = firstNum - secondNum;
         }
-        if (getRandomOperator == 2) {
-            resultOfExpression = firstNumForCalc * secondNumForCalc;
+        if (randomOperator == 2) {
+            resultOfExpression = firstNum * secondNum;
         }
-        calcResult[1] = String.valueOf(resultOfExpression);
-        return calcResult;
+        return String.valueOf(resultOfExpression);
     }
 }

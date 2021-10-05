@@ -12,21 +12,21 @@ public class Engine {
         return userName;
     }
 
-    public static void gameEngine(String[][] arrayResult, String rules) {
+    public static void runEngine(String[][] questionsAndAnswers, String rules) {
         String userName = greeting();
         System.out.println(rules);
         int winsCounter = 0;
-        for (int i = 0; i != Util.COUNTER; i++) {
-            System.out.println("Question: " + arrayResult[i][0]);
+        for (String[] questionAnswer : questionsAndAnswers) {
+            System.out.println("Question: " + questionAnswer[0]);
             String answer = getAnswer();
-            if (answer.equals(arrayResult[i][1])) {
-                correctAnswer();
-                winsCounter++;
-                checkWinsCounter(winsCounter, userName);
-            } else {
-                wrongAnwer(answer, arrayResult[i][1], userName);
-                break;
+            if (!answer.equals(questionAnswer[1])) {
+                System.out.println("'" + answer +  "' is wrong answer ;(. Correct answer was '" + questionAnswer[1]
+                        + "'.\nLet's try again, " + userName + "!");
+                return;
             }
+            System.out.println("Correct!");
+            winsCounter++;
+            checkWinsCounter(winsCounter, userName);
         }
     }
 
@@ -34,15 +34,6 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your answer: ");
         return scanner.nextLine();
-    }
-
-    public static void correctAnswer() {
-        System.out.println("Correct!");
-    }
-
-    public static void wrongAnwer(String userAnswer, String correctAnswer, String userName) {
-        System.out.println("'" + userAnswer +  "' is wrong answer ;(. Correct answer was '" + correctAnswer
-                + "'.\nLet's try again, " + userName + "!");
     }
 
     public static void checkWinsCounter(int winsCounter, String userName) {
