@@ -7,21 +7,21 @@ public class Prime {
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void launchPrimeGame() {
-        String[][] result = new String[Util.ANSWERS][2];
+        String[][] questionAndAnswer = new String[Util.ANSWERS][2];
         for (int i = 0; i != Util.COUNTER; i++) {
             int randomNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
-            String answer = findCorrectAnswer(randomNum) ? "yes" : "no";
-            result[i][0] = String.valueOf(randomNum);
-            result[i][1] = answer;
+            String answer = isPrime(randomNum) ? "yes" : "no";
+            questionAndAnswer[i][0] = String.valueOf(randomNum);
+            questionAndAnswer[i][1] = answer;
         }
-        Engine.runEngine(result, RULES);
+        Engine.runEngine(questionAndAnswer, RULES);
     }
 
-    public static boolean findCorrectAnswer(int randomNum) {
+    public static boolean isPrime(int number) {
         int i = 2;
         boolean checkPrime = false;
-        while (i <= randomNum / 2) {
-            if (randomNum % i  == 0) {
+        while (i <= number / 2) {
+            if (number % i  == 0) {
                 checkPrime = true;
                 break;
             }

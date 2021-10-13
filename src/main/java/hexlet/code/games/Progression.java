@@ -10,31 +10,31 @@ import hexlet.code.Util;
         private static final String RULES = "What number is missing in the progression?";
 
         public static void launchProgressionGame() {
-            String[][] result = new String[Util.ANSWERS][2];
+            String[][] questionAndAnswer = new String[Util.ANSWERS][2];
             for (int i = 0; i != Util.COUNTER; i++) {
                 int firstNumOfProgression = Util.getRandomNum(Util.MIN_RANGE_RANDOM, MAX_RANGE_RANDOM_NUM);
                 int intervalProgression = Util.getRandomNum(Util.MIN_RANGE_RANDOM, MAX_RANGE_RANDOM_INVERVAL_INDEX);
-                int randomIndexNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, MAX_RANGE_RANDOM_INVERVAL_INDEX);
+                int indexToHide = Util.getRandomNum(Util.MIN_RANGE_RANDOM, MAX_RANGE_RANDOM_INVERVAL_INDEX);
                 String[] progression = generateProgression(firstNumOfProgression, intervalProgression);
-                String resultNum = progression[randomIndexNum];
-                result[i][0] = buildQuestion(progression, randomIndexNum);
-                result[i][1] = resultNum;
+                String missedNumber = progression[indexToHide];
+                questionAndAnswer[i][0] = buildQuestion(progression, indexToHide);
+                questionAndAnswer[i][1] = missedNumber;
             }
-            Engine.runEngine(result, RULES);
+            Engine.runEngine(questionAndAnswer, RULES);
         }
 
         public static String[] generateProgression(int firstNumOfProgression, int intervalProgression) {
-            String[] progressionArray = new String[LENGTH_OF_PROGRESSION];
+            String[] progression = new String[LENGTH_OF_PROGRESSION];
             for (int i = 0; i <= LENGTH_OF_PROGRESSION - 1; i++) {
                 firstNumOfProgression += intervalProgression;
-                progressionArray[i] = String.valueOf(firstNumOfProgression);
+                progression[i] = String.valueOf(firstNumOfProgression);
             }
-            return progressionArray;
+            return progression;
         }
 
-        public static String buildQuestion(String[] generatedProgression, int randomIndex) {
+        public static String buildQuestion(String[] generatedProgression, int indexToHide) {
             StringBuilder sb = new StringBuilder();
-            generatedProgression[randomIndex] = "..";
+            generatedProgression[indexToHide] = "..";
             for (String s : generatedProgression) {
                 sb.append(s + " ");
             }

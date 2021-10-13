@@ -7,21 +7,18 @@ public class Even {
     private static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void launchEvenGame() {
-        String[][] result = new String[Util.ANSWERS][2];
+        String[][] questionAndAnswer = new String[Util.ANSWERS][2];
         for (int i = 0; i != Util.COUNTER; i++) {
             int randomNum = Util.getRandomNum(Util.MIN_RANGE_RANDOM, Util.MAX_RANGE_RANDOM);
-            String answer = findCorrectAnswer(randomNum) ? "yes" : "no";
-            result[i][0] = String.valueOf(randomNum);
-            result[i][1] = answer;
+            String answer = isEven(randomNum) ? "yes" : "no";
+            questionAndAnswer[i][0] = String.valueOf(randomNum);
+            questionAndAnswer[i][1] = answer;
         }
-        Engine.runEngine(result, RULES);
+        Engine.runEngine(questionAndAnswer, RULES);
     }
 
-    public static boolean findCorrectAnswer(int randomNum) {
-        if (randomNum % 2 == 0) {
-            return true;
-        }
-        return  false;
+    public static boolean isEven(int randomNum) {
+        return randomNum % 2 == 0;
     }
 }
 
